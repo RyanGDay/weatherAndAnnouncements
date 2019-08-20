@@ -1,0 +1,26 @@
+<div>
+  <h2>Weather</h2>
+  {{data.weather.description}}, 
+  {{data.weather.temperature}} degrees,
+  {{data.weather.percentageRain}}% chance of rain
+</div>
+
+<div>
+  <h2>headlines</h2>
+  <div *ngFor="let headline of data.headlines">
+     - {{headline}}
+  </div>
+</div>
+
+<div>
+  <h2>Scrolling Message</h2>
+  <div>
+    {{data.scroll}}
+  </div>
+</div>
+
+<div>
+  <a href="/admin">
+    Admin Page >>
+  </a>
+</div>

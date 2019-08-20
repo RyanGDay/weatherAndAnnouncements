@@ -19,5 +19,6 @@ import { DisplayComponent } from './display/display.component';
   declarations: [ AppComponent, AdminComponent, DisplayComponent ],
   bootstrap:    [ AppComponent ],
   providers: [InfoService],
+  exports: [RouterModule]
 })
 export class AppModule { }
