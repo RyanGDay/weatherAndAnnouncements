@@ -8,9 +8,23 @@ import { InfoService } from '../info.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  data;
+
+  constructor(
+    private infoService: InfoService
+  ) { }
 
   ngOnInit() {
+    this.data = this.infoService.getData();
+  }
+
+  addHeadline(tempHeadline) {
+    this.infoService.addHeadline(tempHeadline);
+  }
+
+  clear() {
+    this.infoService.clearData();
+    this.data = this.infoService.getData();
   }
 
 }

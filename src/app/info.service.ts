@@ -31,4 +31,8 @@ export class InfoService {
     };
   }
 
+  addHeadline(headline) {
+    this.data.headlines.push(headline);
+  }
+
 }

@@ -12,11 +12,10 @@ export class DisplayComponent implements OnInit {
 
   constructor(
     private infoService: InfoService
-  ) {
-    this.data = infoService.getData();
-  }
+  ) { }
 
   ngOnInit() {
+    this.data = this.infoService.getData();
   }
 
 }

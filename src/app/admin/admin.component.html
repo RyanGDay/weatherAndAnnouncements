@@ -1,3 +1,29 @@
-<p>
-  admin works!
-</p>
+<div>
+  <h2>Weather</h2>
+  Description : <input [(ngModel)]="data.weather.description" /><br/>
+  Temperature : <input [(ngModel)]="data.weather.temperature" /><br/>
+  Percent Chance Perciptation : <input [(ngModel)]="data.weather.percentageRain" /><br/>
+</div>
+
+<div>
+  <h2>Headlines</h2>
+  <input #tempHeadline />
+  <button (click)="addHeadline(tempHeadline.value); tempHeadline.value=''">Add</button>
+  <div *ngFor="let headline of data.headlines">
+     - {{headline}}
+  </div>
+</div>
+
+<div>
+  <h2>Scrolling Message</h2>
+  <div>
+    <input [(ngModel)]="data.scroll" />
+  </div>
+</div>
+
+<div>
+  <button (click)="clear()">Clear All</button>
+  <a routerLink="/info">
+    << Display Page
+  </a>
+</div>
