@@ -31,6 +31,10 @@ export class InfoService {
     };
   }
 
+  clearHeadlines() {
+    this.data.headlines = [];
+  }
+  
   addHeadline(headline) {
     this.data.headlines.push(headline);
   }

@@ -9,6 +9,7 @@ import { InfoService } from '../info.service';
 export class AdminComponent implements OnInit {
 
   data;
+  weatherDescriptions = ["Sunny", "Cloudy", "Rain", "Storms", "Windy"];
 
   constructor(
     private infoService: InfoService
@@ -24,6 +25,11 @@ export class AdminComponent implements OnInit {
 
   clear() {
     this.infoService.clearData();
+    this.data = this.infoService.getData();
+  }
+
+  clearHeadlines() {
+    this.infoService.clearHeadlines();
     this.data = this.infoService.getData();
   }
 

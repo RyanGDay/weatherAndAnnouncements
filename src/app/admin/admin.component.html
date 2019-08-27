@@ -1,8 +1,33 @@
 <div>
   <h2>Weather</h2>
-  Description : <input [(ngModel)]="data.weather.description" /><br/>
-  Temperature : <input [(ngModel)]="data.weather.temperature" /><br/>
-  Percent Chance Perciptation : <input [(ngModel)]="data.weather.percentageRain" /><br/>
+  Description : 
+    <select [(ngModel)]="data.weather.description">
+      <option *ngFor="let desc of weatherDescriptions" [ngValue]="desc">
+        {{desc}}
+      </option>
+    </select><br/>
+    
+  Temperature : 
+    <ng-number-picker [(value)]="data.weather.temperature" 
+                        [min]="'-20'" 
+                        [max]="'120'" 
+                        [step]="'1'"
+                        [postfix]="'&deg;'"
+                        [showDownButton]="true" 
+                        [showUpButton]="true" 
+                        [mouseWheel]="true">
+    </ng-number-picker> <br/>
+  
+    Percent Chance Perciptation : 
+    <ng-number-picker [(value)]="data.weather.percentageRain" 
+                        [min]="'0'" 
+                        [max]="'100'" 
+                        [step]="'1'"
+                        [postfix]="'%'"
+                        [showDownButton]="true" 
+                        [showUpButton]="true" 
+                        [mouseWheel]="true">
+    </ng-number-picker> <br/>
 </div>
 
 <div>
@@ -12,6 +37,7 @@
   <div *ngFor="let headline of data.headlines">
      - {{headline}}
   </div>
+  <button (click)="clearHeadlines()">Clear Section</button>
 </div>
 
 <div>
