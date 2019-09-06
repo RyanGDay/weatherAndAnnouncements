@@ -19,8 +19,8 @@ export class AdminComponent implements OnInit {
     this.data = this.infoService.getData();
   }
 
-  addHeadline(tempHeadline) {
-    this.infoService.addHeadline(tempHeadline);
+  addAnnouncement(tempAnnouncement) {
+    this.infoService.addAnnouncement(tempAnnouncement);
   }
 
   clear() {
@@ -28,8 +28,8 @@ export class AdminComponent implements OnInit {
     this.data = this.infoService.getData();
   }
 
-  clearHeadlines() {
-    this.infoService.clearHeadlines();
+  clearAnnouncements() {
+    this.infoService.clearAnnouncements();
     this.data = this.infoService.getData();
   }
 

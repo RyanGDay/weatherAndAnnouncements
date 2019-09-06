@@ -1,24 +1,30 @@
 <div>
-  <h2>Weather</h2>
-  {{data.weather.description}}, 
-  {{data.weather.temperature}} degrees,
-  {{data.weather.percentageRain}}% chance of rain
-</div>
+  <div class="flex-container">
+    <div class="flex-column weather">
+      <h2>Weather</h2>
+      {{data.weather.description}}<br/>
+      {{data.weather.temperature}} degrees<br/>
+      {{data.weather.percentageRain}}% chance of rain
+    </div>
 
-<div>
-  <h2>Headlines</h2>
-  <div *ngFor="let headline of data.headlines">
-     - {{headline}}
+    <div class="flex-column announcements">
+      <h2>Announcements</h2>
+      <div *ngFor="let announcement of data.announcements">
+        - {{announcement}}
+      </div>
+    </div>
+
   </div>
-</div>
 
-<div>
-  <h2>Scrolling Message</h2>
   <div>
-    {{data.scroll}}
+    <div *ngIf="!isMobile">
+      <marquee>{{data.scroll}}</marquee>
+    </div>
+    <div *ngIf="isMobile">
+      <div class="flex-column">{{data.scroll}}</div>
+    </div>
   </div>
 </div>
-
 <div>
   <a routerLink="/admin">
     Admin Page >>

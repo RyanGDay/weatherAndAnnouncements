@@ -1,49 +1,51 @@
-<div>
-  <h2>Weather</h2>
-  Description : 
-    <select [(ngModel)]="data.weather.description">
-      <option *ngFor="let desc of weatherDescriptions" [ngValue]="desc">
-        {{desc}}
-      </option>
-    </select><br/>
-    
-  Temperature : 
-    <ng-number-picker [(value)]="data.weather.temperature" 
-                        [min]="'-20'" 
-                        [max]="'120'" 
-                        [step]="'1'"
-                        [postfix]="'&deg;'"
-                        [showDownButton]="true" 
-                        [showUpButton]="true" 
-                        [mouseWheel]="true">
-    </ng-number-picker> <br/>
-  
-    Percent Chance Perciptation : 
-    <ng-number-picker [(value)]="data.weather.percentageRain" 
-                        [min]="'0'" 
-                        [max]="'100'" 
-                        [step]="'1'"
-                        [postfix]="'%'"
-                        [showDownButton]="true" 
-                        [showUpButton]="true" 
-                        [mouseWheel]="true">
-    </ng-number-picker> <br/>
-</div>
-
-<div>
-  <h2>Headlines</h2>
-  <input #tempHeadline />
-  <button (click)="addHeadline(tempHeadline.value); tempHeadline.value=''">Add</button>
-  <div *ngFor="let headline of data.headlines">
-     - {{headline}}
+<div class="flex-container">
+    <div class="flex-column weather">
+      <h2>Weather</h2>
+      Description : 
+        <select [(ngModel)]="data.weather.description">
+          <option *ngFor="let desc of weatherDescriptions" [ngValue]="desc">
+            {{desc}}
+          </option>
+        </select><br/>
+        
+      Temperature : 
+        <ng-number-picker [(value)]="data.weather.temperature" 
+                            [min]="'-20'" 
+                            [max]="'120'" 
+                            [step]="'1'"
+                            [postfix]="'&deg;'"
+                            [showDownButton]="true" 
+                            [showUpButton]="true" 
+                            [mouseWheel]="true">
+        </ng-number-picker> <br/>
+      
+        Percent Chance Perciptation : 
+        <ng-number-picker [(value)]="data.weather.percentageRain" 
+                            [min]="'0'" 
+                            [max]="'100'" 
+                            [step]="'1'"
+                            [postfix]="'%'"
+                            [showDownButton]="true" 
+                            [showUpButton]="true" 
+                            [mouseWheel]="true">
+        </ng-number-picker> <br/>
   </div>
-  <button (click)="clearHeadlines()">Clear Section</button>
+
+  <div class="flex-column announcements">
+    <h2>Announcements</h2>
+    <input #tempAnnouncement />
+    <button (click)="addAnnouncement(tempAnnouncement.value); tempAnnouncement.value=''">Add</button>
+    <div *ngFor="let announcement of data.announcements">
+      - {{announcement}}
+    </div>
+    <button (click)="clearAnnouncements()">Clear Section</button>
+  </div>
 </div>
 
-<div>
+<div class="flex-column">
   <h2>Scrolling Message</h2>
   <div>
-    <input [(ngModel)]="data.scroll" />
+    <textarea>{{data.scroll}}</textarea>
   </div>
 </div>
 

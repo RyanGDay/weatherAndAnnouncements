@@ -11,8 +11,8 @@ export class InfoService {
       temperature : '85',
       percentageRain : 5
     },
-    headlines : ['Cubs win 2016 World Series', 'Bernie Sanders wins election', 'Marty McFly hooks up with his mother'],
-    scroll : 'TEST......  TEST ......... TEST .........'
+    announcements : ['Announcement Number One', 'Announcement Number Two', 'Announcement Number Three'],
+    scroll : 'Scrolling Message......  Scrolling Message......... Scrolling Message...........'
   };
 
   getData() {
@@ -26,17 +26,17 @@ export class InfoService {
         temperature : '',
         percentageRain : null
       },
-      headlines : [],
+      announcements : [],
       scroll : ''
     };
   }
 
-  clearHeadlines() {
-    this.data.headlines = [];
+  clearAnnouncements() {
+    this.data.announcements = [];
   }
   
-  addHeadline(headline) {
-    this.data.headlines.push(headline);
+  addAnnouncement(announcement) {
+    this.data.announcements.push(announcement);
   }
 
 }

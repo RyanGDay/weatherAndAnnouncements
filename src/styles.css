@@ -1,1 +1,19 @@
 /* Add application styles & imports to this file! */
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column {
+  background-color: #f1f1f1;
+  width: auto;
+  margin: 10px;
+  padding: 2%;
+}
+
+@media only screen and (min-width: 700px) {
+  .flex-container{ display: flex; flex-direction: row;}
+  .weather { flex: 1; }
+  .announcements { flex: 3; }
+}

@@ -9,6 +9,7 @@ import { InfoService } from '../info.service';
 export class DisplayComponent implements OnInit {
 
   data;
+  isMobile = false;
 
   constructor(
     private infoService: InfoService
@@ -16,6 +17,8 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.infoService.getData();
+
+    window.onresize = () => this.isMobile = window.innerWidth <= 600;
   }
 
 }
