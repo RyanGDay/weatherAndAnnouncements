@@ -6,3 +6,8 @@ ng-number-picker {
 textarea {
   width : 75%;
 }
+
+.clearButton {
+  float: right;
+  margin: 10px;
+}

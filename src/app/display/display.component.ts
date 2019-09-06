@@ -9,7 +9,8 @@ import { InfoService } from '../info.service';
 export class DisplayComponent implements OnInit {
 
   data;
-  isMobile = false;
+  isMobile;
+  mobileWidthMeasuringStick = 600;
 
   constructor(
     private infoService: InfoService
@@ -17,8 +18,8 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.infoService.getData();
-
-    window.onresize = () => this.isMobile = window.innerWidth <= 600;
+    this.isMobile = window.innerWidth <= this.mobileWidthMeasuringStick;
+    window.onresize = () => this.isMobile = window.innerWidth <= this.mobileWidthMeasuringStick;
   }
 
 }

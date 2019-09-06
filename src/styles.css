@@ -17,3 +17,7 @@
   .weather { flex: 1; }
   .announcements { flex: 3; }
 }
+
+a {
+  margin: 10px;
+}
